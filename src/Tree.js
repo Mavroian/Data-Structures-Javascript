@@ -4,7 +4,9 @@ class Tree {
     this.children = [];
   }
 
-  addChild(value) {}
+  addChild(value) {
+    this.children.push(new Tree(value));
+  }
 
   contains(value) {}
 
