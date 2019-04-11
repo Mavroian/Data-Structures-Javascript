@@ -27,8 +27,8 @@ describe("Linked Lists", () => {
     it("should initialize properties with proper values when initial value is not passed into constructor", () => {
       linkedList = new LinkedList();
       expect(linkedList.head).to.be.undefined;
-      expect(linkedList.head).to.not.exist(); // Hint: this line tests if `head` is undefined or null.
-      expect(linkedList.tail).to.not.exist(); // Hint: this line tests if `head` is undefined or null.
+      expect(linkedList.head).to.not.exist; // Hint: this line tests if `head` is undefined or null.
+      expect(linkedList.tail).to.not.exist; // Hint: this line tests if `head` is undefined or null.
     });
 
     it("should add starting node to head and tail with argument value", () => {
@@ -66,7 +66,7 @@ describe("Linked Lists", () => {
     });
   });
 
-  describe("The removeHead method", () => {
+  describe.only("The removeHead method", () => {
     it("should exist on the LinkedList prototype", () => {
       expect(LinkedList.prototype.removeHead).to.exist;
       expect(typeof LinkedList.prototype.removeHead).to.equal("function");
