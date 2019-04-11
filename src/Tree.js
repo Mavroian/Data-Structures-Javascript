@@ -8,7 +8,20 @@ class Tree {
     this.children.push(new Tree(value));
   }
 
-  contains(value) {}
+  contains(value) {
+    let isTrue = false;
+    function searchTree(node) {
+      if (node.value === value) {
+        isTrue = true;
+        return;
+      }
+      for (let i = 0; i < node.children.length; i++) {
+        searchTree(node.children[i]);
+      }
+    }
+    searchTree(this);
+    return isTrue;
+  }
 
   /*
 +-------------------------+
