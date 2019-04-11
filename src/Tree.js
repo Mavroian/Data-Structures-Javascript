@@ -22,6 +22,24 @@ class Tree {
     searchTree(this);
     return isTrue;
   }
+  remove(value) {
+    let status = false;
+    function findNode(node) {
+      if (node.value === value) {
+        node.value = null;
+        status = true;
+        return;
+      }
+
+      for (let i = 0; i < node.children.length; i++) {
+        findNode(node.children[i]);
+      }
+    }
+    findNode(this);
+    if (status === true) {
+      return value;
+    }
+  }
 
   /*
 +-------------------------+
@@ -33,7 +51,21 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 
 */
-  traverseDepthFirst(fn) {}
+  traverseDepthFirst(fn) {
+    function goDown(node) {
+      let status = false;
+      if (node.value) {
+        status = true;
+      }
+      if (node.children.length === 0 && status === true) {
+        fn(node);
+        return;
+      }
+
+      goDown(node.children[0]);
+    }
+    goDown(this);
+  }
 
   traverseBreadthFirst(fn) {}
 }
