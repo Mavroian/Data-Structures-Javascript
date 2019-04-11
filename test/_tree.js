@@ -61,6 +61,14 @@ describe("Trees", () => {
       expect(tree.contains(4)).to.equal(true);
       expect(tree.contains(5)).to.equal(true);
     });
+    it("should remove value", () => {
+      tree.addChild(2);
+      tree.addChild(3);
+      tree.children[0].addChild(4);
+      tree.children[1].addChild(5);
+      expect(tree.remove(2)).to.equal(2);
+      expect(tree.children[0].value).to.equal(null);
+    });
   });
 
   /*
