@@ -30,7 +30,23 @@ class LinkedList {
     return oldHead;
   }
 
-  findNode(value) {}
+  findNode(value) {
+    let targetNode = {};
+    function search(node) {
+      if (node.value === value) {
+        targetNode = node;
+        return;
+      }
+      if (node.next === null) {
+        targetNode = null;
+        return;
+      } else {
+        search(node.next);
+      }
+    }
+    search(this.head);
+    return targetNode;
+  }
 
   /*
 +-------------------------+
