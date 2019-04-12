@@ -5,23 +5,44 @@ class BinarySearchTree {
     this.right = null;
   }
   insert(value) {
-    function searchTree(node) {
-      if (node.value > value) {
+    function searchAndInsert(node) {
+      if (node.value >= value) {
         if (!node.left) {
           node.left = new BinarySearchTree(value);
         } else {
-          searchTree(node.left);
+          searchAndInsert(node.left);
         }
       }
-      if (node.value < value) {
+      if (node.value <= value) {
         if (!node.right) {
           node.right = new BinarySearchTree(value);
         } else {
+          searchAndInsert(node.right);
+        }
+      }
+    }
+    searchAndInsert(this);
+  }
+  contains(value) {
+    let status = false;
+    function searchTree(node) {
+      if (node.value === value) {
+        status = true;
+        return;
+      }
+      if (node.value >= value) {
+        if (node.left) {
+          searchTree(node.left);
+        }
+      }
+      if (node.value <= value) {
+        if (node.right) {
           searchTree(node.right);
         }
       }
     }
     searchTree(this);
+    return status;
   }
 }
 module.exports = BinarySearchTree;
