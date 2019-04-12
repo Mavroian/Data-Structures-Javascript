@@ -44,6 +44,9 @@ class BinarySearchTree {
     searchTree(this);
     return status;
   }
+  traverseDepthFirstInOrder() {
+    return;
+  }
 }
 module.exports = BinarySearchTree;
 /*
