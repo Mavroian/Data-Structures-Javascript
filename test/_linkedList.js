@@ -66,7 +66,7 @@ describe("Linked Lists", () => {
     });
   });
 
-  describe.only("The removeHead method", () => {
+  describe("The removeHead method", () => {
     it("should exist on the LinkedList prototype", () => {
       expect(LinkedList.prototype.removeHead).to.exist;
       expect(typeof LinkedList.prototype.removeHead).to.equal("function");
