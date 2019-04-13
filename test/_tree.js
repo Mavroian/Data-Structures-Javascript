@@ -52,6 +52,9 @@ describe("Trees", () => {
       tree.addChild(2);
       expect(tree.contains(3)).to.equal(false);
     });
+    it("shoud start the search from the first node", () => {
+      expect(tree.contains(1)).to.equal(true);
+    });
 
     it("should correctly detect nested children", () => {
       tree.addChild(2);
