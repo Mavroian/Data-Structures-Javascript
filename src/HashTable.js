@@ -7,11 +7,28 @@ class HashTable {
   }
 
   insert(key, value) {
-    const index = simpleHash(k, this.limit);
+    const index = simpleHash(key, this.limit);
+    if (this.storage.get(index) === undefined) {
+      this.storage.set(index, [key, value]);
+    } else {
+      this.storage.each((el, i, arr) => {
+        if (el) {
+          if (el[0] === key) {
+            el[1] = value;
+          } else {
+            el.push([key, value]);
+          }
+        }
+      });
+    }
+    return index;
   }
 
   retrieve(key) {
-    const idx = simpleHash(k, this.limit);
+    const idx = simpleHash(key, this.limit);
+    const found = this.storage.get(idx);
+
+    return found[1];
   }
 
   remove(key) {}
