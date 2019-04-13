@@ -26,12 +26,13 @@ class Graph {
     return;
   }
   removeNode(value) {
-    let count = 0;
     delete this.nodes[value];
     this.size--;
     for (let keys in this.nodes) {
-      if (this.nodes[keys][value]) {
-        delete this.nodes[keys][keys];
+      for (let i = 0; i < this.nodes[keys].length; i++) {
+        if (this.nodes[keys][i] === value) {
+          this.nodes[keys].splice(i, 1);
+        }
       }
     }
     return;
@@ -42,6 +43,26 @@ class Graph {
   removeEdge(from, to) {
     delete this.nodes[from][to];
     delete this.nodes[to][from];
+  }
+  hasEdge(from, to) {
+    if (Array.isArray(this.nodes[from])) {
+      for (let i = 0; i < this.nodes[from].length; i++) {
+        if (this.nodes[from][i] === to) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    } else if (Array.isArray(this.nodes[to])) {
+      for (let i = 0; i < this.nodes[to].length; i++) {
+        if (this.nodes[to][i] === from) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
+    return false;
   }
 }
 module.exports = Graph;
