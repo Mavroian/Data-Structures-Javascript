@@ -11,7 +11,7 @@ class HashTable {
     if (this.storage.get(index) === undefined) {
       this.storage.set(index, [key, value]);
     } else {
-      this.storage.each((el, i, arr) => {
+      this.storage.each((el) => {
         if (el) {
           if (el[0] === key) {
             el[1] = value;
@@ -30,8 +30,6 @@ class HashTable {
 
     return found[1];
   }
-
-  remove(key) {}
 }
 
 module.exports = HashTable;

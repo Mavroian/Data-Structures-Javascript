@@ -1,5 +1,5 @@
 class Heap {
-  constructor(value) {
+  constructor() {
     this.storage = [];
   }
   insert(value) {

@@ -58,15 +58,15 @@ Do not proceed until you are done with the basic
 requirements for ALL data structures in this exercise.
 */
 
-  forEach(callback) {}
+  // forEach(callback) {}
 
-  print() {}
+  // print() {}
 
-  insertHead(value) {}
+  // insertHead(value) {}
 
-  insertAfter(refNode, value) {}
+  // insertAfter(refNode, value) {}
 
-  removeAfter(refNode) {}
+  // removeAfter(refNode) {}
 }
 
 module.exports = LinkedList;
@@ -77,6 +77,6 @@ module.exports = LinkedList;
 |X   Basic Requirements:         X
 |X   What is the time complexity X
 |X   of the above functions?     X
-|X                               X
+|X       Answer ===>       O(n)  X
 |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */

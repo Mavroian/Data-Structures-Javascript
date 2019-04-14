@@ -66,8 +66,6 @@ requirements for ALL data structures in this exercise.
     }
     goDown(this);
   }
-
-  traverseBreadthFirst(fn) {}
 }
 
 /*
