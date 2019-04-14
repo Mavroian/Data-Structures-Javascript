@@ -103,7 +103,7 @@ Uncomment by removing the 'x'.
 
     it("should take a function as the parameter", () => {
       const x = (node) => node;
-      tree.traverseBreadthFirst(x);
+      tree.traverseDepthFirst(x);
       expect(x).to.be.a("function");
     });
   });
